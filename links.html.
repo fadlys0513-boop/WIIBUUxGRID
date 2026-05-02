@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIIBUU Links - Fadli Saputra</title>
+    <style>
+        :root {
+            --bg-black: #0a0a0a;
+            --card-gray: #1a1a1a;
+            --gold-primary: #fbbf24;
+            --border-soft: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            border: 2px solid var(--gold-primary);
+            padding: 3px;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        h2 { margin: 10px 0 5px; font-size: 22px; font-weight: 800; }
+        .sub-text { color: #888; font-size: 14px; margin-bottom: 35px; }
+
+        .link-card {
+            background: var(--card-gray);
+            border: 1px solid var(--border-soft);
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .link-card:active {
+            transform: scale(0.97);
+            background: #252525;
+            border-color: var(--gold-primary);
+        }
+
+        .icon-box {
+            width: 35px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .link-text {
+            font-weight: 600;
+            font-size: 15px;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .badge {
+            font-size: 10px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-hot { background: #ef4444; color: white; box-shadow: 0 0 10px rgba(239, 68, 68, 0.3); }
+        .badge-new { background: #10b981; color: white; }
+
+        footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #444;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Foto Profil (Otomatis ambil dari GitHub kamu) -->
+        <img src="https://github.com/fadlys0513-boop.png" class="profile-img" alt="Fadli Saputra">
+        
+        <h2>Fadli Saputra</h2>
+        <div class="sub-text">Trader & Developer • CV LINTAS JAYA 🇮🇩</div>
+
+        <!-- Tombol Link Utama -->
+        <a href="https://bit.ly/wiibuublcakrisk" class="link-card">
+            <div class="icon-box">🤖</div>
+            <div class="link-text">Dapatkan WIIBUU BLACK RISK</div>
+            <div class="badge badge-hot">HOT</div>
+        </a>
+
+        <a href="https://t.me/fadlysaputraa" class="link-card">
+            <div class="icon-box">✈️</div>
+            <div class="link-text">Chat Telegram Saya</div>
+        </a>
+
+        <a href="https://vigco.co/la-scom-inv/id/y6jjyAGF" class="link-card">
+            <div class="icon-box">🏦</div>
+            <div class="link-text">Daftar Broker Vantage (IB)</div>
+            <div class="badge badge-new">NEW</div>
+        </a>
+
+        <a href="https://t.me/fadlysaputraa" class="link-card">
+            <div class="icon-box">📊</div>
+            <div class="link-text">Kanal Edukasi & Trading</div>
+        </a>
+
+        <footer>© 2026 FADLI SAPUTRA</footer>
+    </div>
+</body>
+</html>

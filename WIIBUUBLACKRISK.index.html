@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIIBUU BLACK RISK - Premium Gold Trading System</title>
+    <style>
+        :root {
+            --gold-gradient: linear-gradient(135deg, #f0ca78 0%, #c5a059 50%, #ad8346 100%);
+            --bg-dark: #050505;
+            --card-bg: rgba(18, 18, 18, 0.7);
+            --green-accent: #10b981;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --gold-soft: #fbbf24;
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body { 
+            background-color: var(--bg-dark); 
+            color: #ffffff; 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            margin: 0; padding: 0;
+            line-height: 1.6;
+            background-image: radial-gradient(circle at top right, #1a1a10, transparent);
+        }
+
+        .container { 
+            max-width: 480px; 
+            margin: 0 auto; 
+            padding: 60px 24px; 
+            text-align: center;
+        }
+
+        /* HEADER BADGE */
+        .badge-wrapper { margin-bottom: 30px; }
+        .status-badge { 
+            background: rgba(251, 191, 36, 0.1); 
+            color: var(--gold-soft); 
+            padding: 10px 24px; 
+            border-radius: 100px; 
+            font-size: 12px; 
+            font-weight: 700;
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            display: inline-flex;
+            align-items: center; gap: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; box-shadow: 0 0 10px #4ade80; }
+
+        /* TYPOGRAPHY */
+        h1 { 
+            font-size: 48px; 
+            font-weight: 900; 
+            margin: 10px 0; 
+            letter-spacing: -2px; 
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        h1 span { 
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-desc { 
+            color: #a1a1aa; 
+            font-size: 18px; 
+            margin: 20px 0 45px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: flex; align-items: center; justify-content: center;
+            width: 100%; padding: 22px; border-radius: 18px;
+            font-size: 17px; font-weight: 800; text-decoration: none;
+            margin-bottom: 18px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .btn:active { transform: scale(0.96); opacity: 0.9; }
+        .btn-gold { background: var(--gold-gradient); color: #000 !important; }
+        .btn-green { background: var(--green-accent); color: #fff !important; }
+
+        /* SECTIONS */
+        .section-title { 
+            text-align: left; 
+            font-size: 28px; 
+            margin: 80px 0 25px; 
+            font-weight: 800; 
+        }
+        .section-title span { color: var(--gold-soft); }
+        
+        .card { 
+            background: var(--card-bg); 
+            border-radius: 30px; 
+            padding: 32px; 
+            margin-bottom: 24px; 
+            text-align: left; 
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+        }
+
+        /* DETAIL EA (NEW) */
+        .detail-item { margin-bottom: 25px; display: flex; gap: 15px; }
+        .detail-icon { font-size: 24px; color: var(--gold-soft); min-width: 30px; }
+        .detail-text h4 { margin: 0 0 5px 0; font-size: 18px; color: #fff; }
+        .detail-text p { margin: 0; font-size: 14px; color: #a1a1aa; }
+
+        /* PRICING */
+        .price-card { 
+            border: 2px solid var(--gold-soft); 
+            background: linear-gradient(180deg, #1a1a14 0%, #050505 100%);
+            box-shadow: 0 20px 40px rgba(251, 191, 36, 0.1);
+        }
+        .price-label { 
+            color: var(--gold-soft); 
+            font-size: 12px; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            display: block;
+            margin-bottom: 10px;
+        }
+        .price-amount { font-size: 64px; font-weight: 900; margin: 15px 0; letter-spacing: -3px; }
+        .price-amount span { font-size: 20px; color: #71717a; letter-spacing: 0; }
+
+        /* FREE ACCESS */
+        .free-header { display: flex; align-items: center; gap: 8px; color: var(--green-accent); font-size: 12px; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; }
+        .free-hero { font-size: 52px; font-weight: 900; color: var(--green-accent); margin: 0; line-height: 1; letter-spacing: -2px; }
+        
+        .step-item { 
+            background: rgba(255,255,255,0.03); 
+            border-radius: 16px; 
+            padding: 18px 24px; 
+            display: flex; 
+            align-items: center; 
+            gap: 18px; 
+            margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .step-circle { 
+            background: #000; 
+            color: var(--green-accent); 
+            min-width: 32px; height: 32px; 
+            border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            font-weight: 800; font-size: 14px; border: 1px solid var(--border-color); 
+        }
+
+        /* SETUP BOX */
+        .setup-box {
+            background: rgba(251, 191, 36, 0.03);
+            border: 1px solid rgba(251, 191, 36, 0.15);
+            border-radius: 20px;
+            padding: 24px;
+            margin-top: 20px;
+        }
+        .setup-title { color: var(--gold-soft); font-size: 13px; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; display: block; }
+        .setup-list { list-style: none; padding: 0; margin: 0; }
+        .setup-list li { margin-bottom: 10px; font-size: 15px; color: #d1d1d6; display: flex; justify-content: space-between; }
+        .setup-list li span { color: #fff; font-weight: 700; }
+
+        .referral-box { 
+            background: #101a14; border: 1px dashed var(--green-accent); 
+            color: var(--green-accent); padding: 20px; border-radius: 18px; 
+            font-weight: 800; font-size: 18px; margin: 25px 0; text-align: center;
+        }
+
+        .input-view { background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); padding: 20px; border-radius: 18px; display: flex; justify-content: space-between; margin-bottom: 12px; }
+
+        footer { margin-top: 100px; padding: 80px 24px; border-top: 1px solid var(--border-color); font-size: 13px; color: #52525b; background: linear-gradient(180deg, transparent, #050505); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <div class="badge-wrapper">
+        <div class="status-badge"><div class="dot"></div> MT5 Expert Advisor • v1.0</div>
+    </div>
+    
+    <h1>WIIBUU <span>BLACK RISK</span></h1>
+    <p class="hero-desc">Solusi cerdas trading Gold (XAUUSD) otomatis dengan strategi trend-following murni.</p>
+    
+    <a href="https://t.me/fadlysaputraa" class="btn btn-gold">Dapatkan Akses Premium</a>
+    <p style="color: #52525b; font-size: 14px; font-weight: 600; margin-top: 10px;">Developed by Fadli Saputra</p>
+
+    <!-- DETAIL EA SECTION (NEW) -->
+    <h2 class="section-title">Detail <span>Strategi</span></h2>
+    <div class="card">
+        <div class="detail-item">
+            <div class="detail-icon">📈</div>
+            <div class="detail-text">
+                <h4>Smart Trend Entry</h4>
+                <p>Menggunakan konfirmasi EMA 50 & 200 untuk memastikan setiap entry selalu mengikuti trend besar pasar.</p>
+            </div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-icon">🛡️</div>
+            <div class="detail-text">
+                <h4>Hybrid Risk Control</h4>
+                <p>Dilengkapi Smart Partial Close dan Trailing Profit otomatis untuk mengunci keuntungan secara bertahap.</p>
+            </div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-icon">🛑</div>
+            <div class="detail-text">
+                <h4>Daily DD Protection</h4>
+                <p>Sistem otomatis membatasi kerugian harian (Max DD) untuk menjaga keamanan modal akun Anda.</p>
+            </div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-icon">⚡</div>
+            <div class="detail-text">
+                <h4>M1 High Frequency</h4>
+                <p>Optimasi khusus untuk timeframe M1 pada XAUUSD demi mendapatkan akurasi entry terbaik.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Opsi Lisensi -->
+    <h2 class="section-title">Opsi <span>Beli</span></h2>
+    <div class="card price-card">
+        <span class="price-label">👑 Lisensi Seumur Hidup</span>
+        <div class="price-amount">$150 <span>USDT</span></div>
+        <p style="color: #71717a; margin-top: -10px; margin-bottom: 30px;">Tanpa Biaya Bulanan</p>
+        
+        <div style="text-align: left; margin-bottom: 30px;">
+            <div style="margin-bottom: 12px; font-size: 15px;">✓ Support semua Broker MT5</div>
+            <div style="margin-bottom: 12px; font-size: 15px;">✓ Gratis Update versi terbaru</div>
+            <div style="margin-bottom: 12px; font-size: 15px;">✓ Instalasi dibantu sampai Running</div>
+        </div>
+
+        <a href="https://t.me/fadlysaputraa" class="btn btn-gold">Beli Lisensi Sekarang</a>
+    </div>
+
+    <!-- Akses Gratis -->
+    <h2 class="section-title">Akses <span>Gratis</span></h2>
+    <div class="card" style="padding: 40px 24px;">
+        <div class="free-header"><div style="width:6px;height:6px;background:var(--green-accent);border-radius:50%"></div> OPSI IB PROGRAM</div>
+        <div class="free-hero">FREE</div>
+        <div class="free-sub" style="margin-bottom: 30px; color:#71717a;">Gunakan EA gratis melalui jaringan IB resmi.</div>
+
+        <div class="step-item"><div class="step-circle">1</div><div style="font-weight:600;">Daftar akun via link referral</div></div>
+        <div class="step-item"><div class="step-circle">2</div><div style="font-weight:600;">Verifikasi Akun (KYC)</div></div>
+        <div class="step-item"><div class="step-circle">3</div><div style="font-weight:600;">Buat akun trading MT5</div></div>
+        <div class="step-item"><div class="step-circle">4</div><div style="font-weight:600;">Deposit Min. $50 (Vantage)</div></div>
+
+        <div class="referral-box">KODE PERUJUK: y6jjyAGF</div>
+        
+        <a href="https://vigco.co/la-scom-inv/id/y6jjyAGF" class="btn btn-green">🔗 Daftar Melalui Broker</a>
+    </div>
+
+    <!-- Setup Rekomendasi -->
+    <h2 class="section-title">Setup <span>Terbaik</span></h2>
+    <div class="card">
+        <h3 style="margin-top:0;">Vantage Broker</h3>
+        <div class="setup-box">
+            <span class="setup-title">Rekomendasi Akun</span>
+            <ul class="setup-list">
+                <li>Tipe Akun: <span>Cent Account</span></li>
+                <li>Leverage: <span>1:2000</span></li>
+                <li>Deposit: <span>$50 (5.000 USC)</span></li>
+            </ul>
+        </div>
+        <p style="font-size: 13px; color: #52525b; margin-top: 20px;">*Menggunakan akun Cent memberikan ketahanan margin yang jauh lebih aman untuk trading Gold.</p>
+    </div>
+
+    <!-- Aktivasi -->
+    <h2 class="section-title">Aktivasi <span>Sekarang</span></h2>
+    <div class="card">
+        <p style="color: #a1a1aa; margin-bottom: 25px;">Kirim data berikut ke Telegram untuk pengaktifan lisensi:</p>
+        <div class="input-view"><span style="color:#71717a;">ID Akun MT5</span><span style="font-weight:700;">Screenshot</span></div>
+        <div class="input-view"><span style="color:#71717a;">Email Terdaftar</span><span style="font-weight:700;">Alamat Email</span></div>
+        
+        <a href="https://t.me/fadlysaputraa" class="btn btn-gold" style="margin-top: 25px;">🚀 Hubungi Admin Telegram</a>
+    </div>
+
+    <footer>
+        <p>Trading Forex & Gold mengandung risiko tinggi. Performa masa lalu bukan jaminan hasil di masa depan.</p>
+        <p style="margin-top: 35px; font-weight: 800; color: #71717a; letter-spacing: 1px;">© 2026 FADLI SAPUTRA</p>
+    </footer>
+</div>
+
+</body>
+</html>
